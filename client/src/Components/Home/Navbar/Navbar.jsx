@@ -32,7 +32,7 @@ function Navbar() {
           <div className="group">
             <ul className="navigation">
             <li><p>Bookmarks</p></li>
-              <Link to="/Login"><li><p>Login</p></li></Link>
+              <Link to="/login"><li><p>Login</p></li></Link>
             </ul>
           </div>
           <div className="search">
