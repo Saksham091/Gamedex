@@ -1,6 +1,7 @@
 import Navbar from './Navbar/Navbar'
 import Carousel from './Carousel/Carousel'
 import Genre from './Genre/Genre'
+import List from './List/list'
 
 const Home = () => {
 
@@ -9,6 +10,7 @@ const Home = () => {
             <Navbar />
             <Carousel />
             <Genre />
+            <List />
         </>
     )
 }

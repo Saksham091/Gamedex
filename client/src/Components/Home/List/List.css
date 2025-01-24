@@ -1,0 +1,50 @@
+.container_list {
+    background-image: url("../../../assets/bg-list.png");
+    background-size: cover;
+    height: 62vh;
+    position: absolute;
+}
+
+.heading_list {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.hilightes{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6vh;
+    margin-top: 2vh;
+    justify-content: center;
+    padding: 12px;
+}
+
+.game-img {
+    height: 25vh;
+    width: 10vw;
+}
+
+.genre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommended {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6vh;
+    margin-top: 2vh;
+    justify-content: center;
+    padding: 12px;
+    padding-bottom: 10px;
+}
+
+.recommended_game{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
