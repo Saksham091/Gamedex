@@ -1,0 +1,76 @@
+.container_main {
+    background-image: url(../../../assets/bg_main.png);
+    background-size: cover;
+    position: absolute;
+    width: 101%;
+    margin-left: -1%;
+}
+
+.game_img_main {
+    height: 35vh;
+    margin-left: 6%;
+
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    width: 38vw;
+    position: absolute;
+    background-color: #201c1b73;
+    right: 9%;
+}
+
+.specifications{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+    color: white;
+}
+
+.ss{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.review{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+    margin-bottom: 3%;
+}
