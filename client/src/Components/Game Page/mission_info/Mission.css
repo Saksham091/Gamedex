@@ -1,0 +1,48 @@
+.container_mission {
+    background-image: url(../../../assets/bg_main.png);
+    background-size: cover;
+    position: absolute;
+    width: 101%;
+    margin-left: -1%;
+}
+
+.game_img_mission {
+    height: 50vh;
+    margin-left: 6%;
+    margin-top: 5%;
+    width: 117vh;
+}
+
+.mission {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.story{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.tutorial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 56.6vw;
+    background-color: #201c1b73;
+    margin-top: 4%;
+    margin-left: 6%;
+    margin-bottom: 5%;
+}
