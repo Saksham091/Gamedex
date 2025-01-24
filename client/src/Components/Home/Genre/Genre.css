@@ -1,0 +1,181 @@
+.container_gen {
+    background-image: url("../../../assets/bg-gen.png");
+    background-size: cover;
+    height: 62vh;
+    margin-left: 3%;
+}
+
+.heading_gen {
+    margin-top: 5%;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6vh;
+    margin-top: 5vh;
+}
+
+.card-img {
+    height: 10vh;
+}
+
+.genre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #0cbabf, transparent) #2195f300;
+}
+
+.action:hover,
+.action:focus {
+    background-color: rgba(255, 255, 255, 0.715);
+    color: #fff;
+}
+
+.racing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #FF5F00, transparent) #2195f300;
+}
+
+.racing:hover,
+.racing:focus {
+    background-color: #eeee27dd;
+    color: #fff;
+}
+
+.horror {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #000000, transparent) #2195f300;
+}
+
+.horror:hover,
+.horror:focus {
+    background-color: #0048ff8a;
+    color: #fff;
+}
+
+.survival {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #855e42, transparent) #2195f300;
+}
+
+.survival:hover,
+.survival:focus {
+    background-color: #00864a;
+    color: #fff;
+}
+
+.sports {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, green, transparent) #2195f300;
+}
+
+.sports:hover,
+.sports:focus {
+    background-color: yellow;
+    color: #fff;
+}
+
+.adventure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, skyblue, transparent) #2195f300;
+}
+
+.adventure:hover,
+.adventure:focus {
+    background-color: #0068b3;
+    color: #fff;
+}
+
+.strategy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #ffca38c1, transparent) #2195f300;
+}
+
+.strategy:hover,
+.strategy:focus {
+    background-color: #484857;
+    color: #fff;
+}
+
+.fighting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #b61e0e, transparent) #2195f300;
+}
+
+.fighting:hover,
+.fighting:focus {
+    background-color: #7c0c0093;
+    color: #fff;
+}
+
+.world {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 10vh;
+    width: 15vw;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #005fb3a1, transparent) #2195f300;
+}
+
+.world:hover,
+.world:focus {
+    background-color:  #2c4232;
+    color: #fff;
+}

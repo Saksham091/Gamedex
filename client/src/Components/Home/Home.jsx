@@ -1,5 +1,6 @@
 import Navbar from './Navbar/Navbar'
 import Carousel from './Carousel/Carousel'
+import Genre from './Genre/Genre'
 
 const Home = () => {
 
@@ -7,6 +8,7 @@ const Home = () => {
         <>
             <Navbar />
             <Carousel />
+            <Genre />
         </>
     )
 }
