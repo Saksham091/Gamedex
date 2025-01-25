@@ -1,0 +1,28 @@
+.container_loading{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 66.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/bg_login.png");
+}
+
+.loaderContainer{
+    border: 2px solid white;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 2px;
+}
+
+.loaderBox{
+    background: white;
+    height: 25px;
+    width: 35px;
+    display: none;
+    animation: none;
+}
