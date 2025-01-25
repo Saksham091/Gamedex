@@ -4,6 +4,7 @@ import Home from './Components/Home/Home'
 import Info from './Components/Game Page/main_info/Info'
 import Login from './Components/Login/login';
 import Loading from './Components/Loading/loading.jsX';
+import Intro from './Components/Intro/Intro'
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/info' element={<Info />} />
         <Route path='/login' element={<Login />} />
         <Route path='/loading' element={<Loading />} />
+        <Route path='/intro' element={<Intro />} />
       </Routes>
     </div>
   )
