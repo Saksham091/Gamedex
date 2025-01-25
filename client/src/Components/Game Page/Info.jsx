@@ -1,6 +1,6 @@
 import './Info.css';
-import Navbar from '../../Home/Navbar/Navbar';
-import slide_image_1 from '../../../assets/watch.png';
+import Navbar from '../Home/Navbar/Navbar';
+import slide_image_1 from '../../assets/watch.png';
 import { Link } from "react-router-dom";
 
 function Info() {

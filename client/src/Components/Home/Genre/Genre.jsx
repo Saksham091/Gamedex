@@ -14,47 +14,48 @@ import slide_image_9 from '../../../assets/world.png';
 
 function Genre() {
   return (
-    <div className='container_gen'>
-      <h1 className='heading_gen'>Most Popular Genre</h1>
-      <div className='card'>
-        <div className='genre'>
-          <img src={slide_image_1} alt="slide_image" className='card-img' />
-          <h1 className='action'>Action</h1>
+    <div class="container_gen">
+    <h2 class="heading_gen">Most Popular Genre</h2>
+    <div class="card">
+        <div class="genre action">
+            <img class="card-img" src={slide_image_1} alt="Action" />
+            <span>Action</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_2} alt="slide_image" className='card-img' />
-          <h1 className='racing'>Racing</h1>
+        <div class="genre racing">
+            <img class="card-img" src={slide_image_2} alt="Racing" />
+            <span>Racing</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_3} alt="slide_image" className='card-img' />
-          <h1 className='horror'>Horror</h1>
+        <div class="genre horror">
+            <img class="card-img" src={slide_image_3} alt="Horror" />
+            <span>Horror</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_4} alt="slide_image" className='card-img' />
-          <h1 className='survival'>Survival</h1>
+        <div class="genre survival">
+            <img class="card-img" src={slide_image_4} alt="Survival" />
+            <span>Survival</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_5} alt="slide_image" className='card-img' />
-          <h1 className='sports'>Sports</h1>
+        <div class="genre sports">
+            <img class="card-img" src={slide_image_5} alt="Sports" />
+            <span>Sports</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_6} alt="slide_image" className='card-img' />
-          <h1 className='adventure'>Adventure</h1>
+        <div class="genre adventure">
+            <img class="card-img" src={slide_image_6} alt="Adventure" />
+            <span>Adventure</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_7} alt="slide_image" className='card-img' />
-          <h1 className='strategy'>Strategy</h1>
+        <div class="genre strategy">
+            <img class="card-img" src={slide_image_7} alt="Strategy" />
+            <span>Strategy</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_8} alt="slide_image" className='card-img' />
-          <h1 className='fighting'>Fighting</h1>
+        <div class="genre fighting">
+            <img class="card-img" src={slide_image_8} alt="Fighting" />
+            <span>Fighting</span>
         </div>
-        <div className='genre'>
-          <img src={slide_image_9} alt="slide_image" className='card-img' />
-          <h1 className='world'>Open World</h1>
+        <div class="genre world">
+            <img class="card-img" src= {slide_image_9} alt="Open World" />
+            <span>Open World</span>
         </div>
-      </div>
     </div>
+</div>
+
   );
 }
 

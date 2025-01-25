@@ -1,181 +1,183 @@
+/* Container and Header */
 .container_gen {
     background-image: url("../../../assets/bg-gen.png");
+    /* Replace with actual path */
     background-size: cover;
-    height: 62vh;
-    margin-left: 3%;
+    background-position: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .heading_gen {
-    margin-top: 5%;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
 }
 
+/* Card Layout */
 .card {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6vh;
-    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 90%;
+    justify-items: center;
 }
 
-.card-img {
-    height: 10vh;
-}
-
+/* Genre Cards */
 .genre {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    font-family: Arial, sans-serif;
+    transition: background-color 1s;
 }
 
+.genre img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.genre span {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Hover Effect */
+.genre:hover {
+    transform: scale(1.05);
+}
+
+/* Individual Genres (Colors) */
 .action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #0cbabf, transparent) #2195f300;
+    background: linear-gradient(to right, #0cbabf, transparent);
 }
 
 .action:hover,
-.action:focus {
+.action:focus{
     background-color: rgba(255, 255, 255, 0.715);
     color: #fff;
 }
 
 .racing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #FF5F00, transparent) #2195f300;
+    background: linear-gradient(to right, #ff5f00, transparent);
 }
 
 .racing:hover,
-.racing:focus {
+.racing:focus{
     background-color: #eeee27dd;
     color: #fff;
 }
 
-.horror {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #000000, transparent) #2195f300;
+.horror{
+    background: linear-gradient(to right, #000000, transparent);
 }
 
 .horror:hover,
-.horror:focus {
+.horror:focus{
     background-color: #0048ff8a;
     color: #fff;
 }
 
 .survival {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #855e42, transparent) #2195f300;
+    background: linear-gradient(to right, #855e42, transparent);
 }
 
 .survival:hover,
-.survival:focus {
+.survival:focus{
     background-color: #00864a;
     color: #fff;
 }
 
 .sports {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, green, transparent) #2195f300;
+    background: linear-gradient(to right, green, transparent);
 }
 
 .sports:hover,
-.sports:focus {
+.sports:focus{
     background-color: yellow;
     color: #fff;
 }
 
 .adventure {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, skyblue, transparent) #2195f300;
+    background: linear-gradient(to right, skyblue, transparent);
 }
 
 .adventure:hover,
-.adventure:focus {
+.adventure:focus{
     background-color: #0068b3;
     color: #fff;
 }
 
 .strategy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #ffca38c1, transparent) #2195f300;
+    background: linear-gradient(to right, #ffca38c1, transparent);
 }
 
 .strategy:hover,
-.strategy:focus {
+.strategy:focus{
     background-color: #484857;
     color: #fff;
 }
 
 .fighting {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #b61e0e, transparent) #2195f300;
+    background: linear-gradient(to right, #b61e0e, transparent);
 }
 
 .fighting:hover,
-.fighting:focus {
+.fighting:focus{
     background-color: #7c0c0093;
     color: #fff;
 }
 
+
 .world {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: 10vh;
-    width: 15vw;
-    transition: background-color 1s;
-    background: linear-gradient(90deg, #005fb3a1, transparent) #2195f300;
+    background: linear-gradient(to right, #005fb3a1, transparent);
 }
 
 .world:hover,
-.world:focus {
-    background-color:  #2c4232;
+.world:focus{
+    background-color: #2c4232;
     color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .heading_gen {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .genre {
+        height: 8vh;
+    }
+
+    .heading_gen {
+        font-size: 1.8rem;
+    }
 }

@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './Carousel.css';
+import './carousel.css';
 import { EffectCoverflow, Autoplay, Pagination, Navigation } from 'swiper';
 
 import slide_image_1 from '../../../assets/Valorant.png';
