@@ -1,9 +1,24 @@
-import './Info.css';
+import './info.css';
+import { useState, useEffect } from 'react';
 import Navbar from '../Home/Navbar/Navbar';
 import slide_image_1 from '../../assets/watch.png';
-import { Link } from "react-router-dom";
+import Loading from '../Loading/loading';
 
 function Info() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <Navbar />
@@ -13,7 +28,6 @@ function Info() {
           <h1 className='name'>About the game</h1>
         </div>
         <h1 className='specifications'>Specifications</h1>
-        <Link to="/mission"><h1 className='list'>Mission List</h1></Link>
         <h1 className='ss'>Game play, Screenshots</h1>
         <h1 className='review'>Public Review</h1>
       </div>

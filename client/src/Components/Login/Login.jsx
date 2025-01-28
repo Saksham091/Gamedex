@@ -1,10 +1,26 @@
 import './login.css';
-import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa'
+import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import Loading from '../Loading/loading';
 
 function Login() {
+    const [isLoading, setIsLoading] = useState(true); 
+    
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false); 
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     const toggleMode = (mode) => {
         document.querySelector(".container_login").classList.toggle("sign-up-mode", mode === "signup");
     };
+
+    if (isLoading) {
+        return <Loading />;
+    }
 
     return (
         <div className="container_login">
@@ -49,7 +65,7 @@ function Login() {
                             <input type="email" name="email" placeholder="Email" />
                         </div>
                         <div className="input-field">
-                        <i> <FaLock /> </i>
+                            <i> <FaLock /> </i>
                             <input type="password" name="password" placeholder="Password" />
                         </div>
                         <div className="button">

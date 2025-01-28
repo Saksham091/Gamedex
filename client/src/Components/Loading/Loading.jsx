@@ -1,27 +1,43 @@
-import { useEffect } from "react";
-import "./loading.css"
+import { useEffect, useRef } from "react";
+import "./loading.css";
 
 function Loading() {
     const Box = document.getElementsByClassName("loaderBox");
+    let timer = useRef()
 
     useEffect(() => {
-        setTimeout(() => {
-            let i = 0;
-            setInterval(() => {
+        let i = 0;
+
+        const startLoop = () => {
+            clearInterval(timer.current);
+            Array.from(Box).forEach((box) => {
+                box.style.display = "none";
+            });
+            timer.current = setInterval(() => {
                 if (i < 5) {
+                    Box[i].style.display = "block"; 
                     i++;
-                    Box[i - 1].style.display = "block";
+                } else {
+                    i = 0;
+                    Array.from(Box).forEach((box) => {
+                        box.style.display = "none"; 
+                    });
                 }
-            }, 700)
-        }, 700)
-    })
+            }, 300); 
+        };
+
+       
+        setTimeout(() => {
+            startLoop();
+        }, 300); 
+        
+        return () => clearInterval(timer.current);
+    }, [Box]);
 
     return (
         <div className="container_loading">
             <div>
-                <h1>
-                    Loading...
-                </h1>
+                <h1>Loading...</h1>
                 <div className="loaderContainer">
                     <div className="loaderBox"></div>
                     <div className="loaderBox"></div>

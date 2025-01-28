@@ -1,26 +1,58 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom'
-import Home from './Components/Home/Home'
-import Info from './Components/Game Page/Info'
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Home from './Components/Home/Home';
+import Info from './Components/Game Page/Info';
 import Login from './Components/Login/login';
-import Loading from './Components/Loading/loading.jsX';
-import Intro from './Components/Intro/Intro'
-
-
+import Loading from './Components/Loading/loading';
+import Intro from './Components/Intro/Intro';
 
 function App() {
+  const [showIntro, setShowIntro] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      const hasPlayedIntro = sessionStorage.getItem('introPlayed');
+
+      if (!hasPlayedIntro) {
+        setShowIntro(true);
+        setTimeout(() => {
+          sessionStorage.setItem('introPlayed', 'true');
+          setShowIntro(false);
+          setShowLoading(true);
+          setTimeout(() => {
+            setShowLoading(false);
+            navigate('/');
+          }, 2000);
+        }, 16000);
+      } else {
+        setShowLoading(true);
+        setTimeout(() => {
+          setShowLoading(false);
+          navigate('/');
+        }, 3000);
+      }
+    }
+  }, [navigate, location.pathname]);
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/info' element={<Info />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/loading' element={<Loading />} />
-        <Route path='/intro' element={<Intro />} />
-      </Routes>
+      {showIntro && <Intro />}
+      {showLoading && <Loading />}
+      {!showIntro && !showLoading && (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/info" element={<Info />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/intro" element={<Intro />} />
+        </Routes>
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

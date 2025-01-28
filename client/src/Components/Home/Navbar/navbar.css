@@ -11,19 +11,6 @@
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-*{
-    font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Black Ops One';
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    border:none;
-    text-decoration: none;
-    transition:all .2s;
-}
-
-
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -31,7 +18,6 @@ html{
     scroll-behavior: smooth;
     background: black;
 }
-
 
 .container_nav{
     margin: 0;
