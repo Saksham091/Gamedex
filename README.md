@@ -21,7 +21,7 @@ Check out the deployed version of the app: 🔗 **[GameDex](#)**
 **1. Clone the Repository**
 ```bash
 git clone https://github.com/yourusername/GameDex.git
-cd gamedex
+cd client
 ```
 
 **2. Install Dependencies**
