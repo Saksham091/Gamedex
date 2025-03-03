@@ -48,3 +48,4 @@ npm start
 * **Vercel** (Hosting & deployment)
 
 Enjoy exploring the world of games with GameDex! 🎮😊
+
