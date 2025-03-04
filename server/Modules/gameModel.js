@@ -10,6 +10,10 @@ const gameSchema = new schema({
         type: String
     },
 
+    releaseDate: {
+        type: Date
+    },
+
     minRequired: [
         {
             OS: {
@@ -28,9 +32,8 @@ const gameSchema = new schema({
                 type: String
             }
         }
-    ]
-    ,
-    
+    ],
+
     recRequired: [
         {
             OS: {
@@ -49,8 +52,7 @@ const gameSchema = new schema({
                 type: String
             }
         }
-    ]
-    ,
+    ],
 
     missions: [
         {
@@ -68,8 +70,7 @@ const gameSchema = new schema({
                 type: String
             }
         }
-    ]
-    ,
+    ],
     
     trailer: {
         type: String

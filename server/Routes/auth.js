@@ -5,12 +5,12 @@ const jwt = require("jsonwebtoken")
 require("dotenv").config()
 
 router.post("/signup", async (req, res) => {
-    const { firstName, lastName, username, password, email} = req.body;
+    const { firstName, lastName, userName, password, email} = req.body;
 
     // Velidating If The Email Already Exist
 
     try {
-        const foundUser = await user.findOne({ $or: [{ userName: username }, { email: email }] });
+        const foundUser = await user.findOne({ $or: [{ userName: userName }, { email: email }] });
 
         if (foundUser) {
             return res.status(400).json({
@@ -21,25 +21,23 @@ router.post("/signup", async (req, res) => {
                 ]
             });
         } else {
-
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(password, salt);
 
-            user.create({
+            const newUser = await user.create({
                 firstName,
                 lastName,
-                username,
+                userName,
                 email,
                 password: hashedPassword
             });
 
-            const token = await jwt.sign({
-                email
-            }, process.env.Key , {
-                expiresIn: 3600000
-            })
-
-            res.send(`Welcome New User ~ ${token}`);
+            const token = await jwt.sign(
+                { userId: newUser._id },
+                process.env.JWT_SECRET,
+                { expiresIn: "1h" }
+            );
+            res.status(200).json({ token: `${token}` });
         }
     } catch (error) {
         console.error("An error occurred:", error);
@@ -50,9 +48,9 @@ router.post("/signup", async (req, res) => {
 // For Login
 
 router.post('/login', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { userName, password } = req.body;
     try {
-        const oldUser = await user.findOne({ $or: [{ userName: username }, { email: email }] });
+        const oldUser = await user.findOne({ userName: userName });
 
         if (!oldUser) {
             return res.status(400).json({
@@ -74,13 +72,12 @@ router.post('/login', async (req, res) => {
                     ]
                 });
             } else {
-                const token = await jwt.sign({
-                    email
-                }, process.env.Key, {
-                    expiresIn: 3600000
-                })
-
-                res.status(200).json({token:`${token}`});
+                const token = await jwt.sign(
+                    { userId: oldUser._id },
+                    process.env.JWT_SECRET,
+                    { expiresIn: "1h" }
+                );
+                res.status(200).json({ token: `${token}` });
             }
         }
     } catch (error) {
@@ -95,7 +92,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get("/", async (req, res) => {
+router.get("/all", async (req, res) => {
     try {
         const data = await user.find();
         res.status(200).json(data);

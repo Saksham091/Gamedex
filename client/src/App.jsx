@@ -6,6 +6,7 @@ import Info from './Components/Game Page/Info';
 import Login from './Components/Login/login';
 import Loading from './Components/Loading/loading';
 import Intro from './Components/Intro/Intro';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   const [showIntro, setShowIntro] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/intro" element={<Intro />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       )}
     </div>

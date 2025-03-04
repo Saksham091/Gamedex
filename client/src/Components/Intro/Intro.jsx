@@ -1,4 +1,4 @@
-import './Intro.css';
+import './intro.css';
 import video from "../../assets/intro.mp4"
 import ReactPlayer from 'react-player'
 

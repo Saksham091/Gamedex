@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema
 
 const userSchema = new schema({
-    fristName: {
+    firstName: {
         type: String,
         require: true,
         trim: true
     },
-    
+
     lastName: {
         type: String,
         require: true,
@@ -20,7 +20,6 @@ const userSchema = new schema({
         unique: true,
         trim: true,
         index: true,
-        lowercase: true,
     },
 
     email: {
@@ -36,8 +35,19 @@ const userSchema = new schema({
         require: true,
         trim: true,
         min: 8,
-        lowercase: true
     },
+
+    wishlist: {
+        type: Array
+    },
+
+    playing: {
+        type: Array
+    },
+
+    played: {
+        type: Array
+    }
 
 })
 

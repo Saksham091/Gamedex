@@ -1,10 +1,98 @@
 import './login.css';
 import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import Loading from '../Loading/loading';
 
 function Login() {
-    const [isLoading, setIsLoading] = useState(true); 
+    const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
+    const [error, setError] = useState(false);
+
+    // Toggle Between Login And Signup Form
+
+    const signupIntitialValues = {
+        firstName: '',
+        lastName: '',
+        userName: '',
+        email: '',
+        password: '',
+    }
+
+    const loginIntitialValues = {
+        userName: '',
+        password: '',
+    }
+
+    const [signup, setSignup] = useState(signupIntitialValues)
+    const [login, setLogin] = useState(loginIntitialValues)
+    const [update, setUpdate] = useState('')
+
+
+    const onInputChange = (e) => {
+        setSignup({ ...signup, [e.target.name]: e.target.value });
+    }
+
+    const onValueChange = (e) => {
+        setLogin({ ...login, [e.target.name]: e.target.value });       
+    }
+
+    // Sign Up Function
+
+ 
+    async function signupUser (e) {
+        e.preventDefault();
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/signup`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(signup),
+            });
+            if (response.ok) {
+                setError(false)
+                setUpdate('Account Created Successfully')
+                window.location.reload();
+            } else {
+                setError(true);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    // Login Function
+
+    const loginUser = async (e) => {
+        e.preventDefault();
+
+        try {
+            await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(login),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.token) {
+                        setError(false);
+                        sessionStorage.setItem('userId', data.token)
+                        navigate('/');
+                    }
+                })
+                .catch((error) => {
+                    setError(true);
+                    console.log(error)
+                })
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
     
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -30,16 +118,17 @@ function Login() {
                         <h2 className="title">Sign in</h2>
                         <div className="input-field">
                             <i> <FaUser /> </i>
-                            <input type="text" name="userName" placeholder="Username" />
+                            <input type="text" onChange={(e) => onValueChange(e)} name="userName" placeholder="Username" />
                         </div>
                         <div className="input-field">
                             <i> <FaLock /> </i>
-                            <input type="password" name="password" placeholder="Password" />
+                            <input type="password" onChange={(e) => onValueChange(e)} name="password" placeholder="Password" />
                         </div>
+                        {error && <p className='error'>Please enter a valid username or password</p>}
                         <div className="button">
                             <div className="outer">
                                 <div className="btn transparent">
-                                    <button type="submit" value="Login" className="btn-form solid">Login</button>
+                                    <button type="submit" onClick={(e) => loginUser(e)} className="btn-form solid">Login</button>
                                 </div>
                             </div>
                         </div>
@@ -49,29 +138,31 @@ function Login() {
                         <div className="form-name">
                             <div className="input-field">
                                 <i> <FaUser /> </i>
-                                <input type="text" name="fristName" placeholder="Firstname" />
+                                <input type="text" onChange={(e) => onInputChange(e)} name="firstName" placeholder="Firstname" />
                             </div>
                             <div className="input-field">
                                 <i> <FaUser /> </i>
-                                <input type="text" name="lastName" placeholder="Lastname" />
+                                <input type="text" onChange={(e) => onInputChange(e)} name="lastName" placeholder="Lastname" />
                             </div>
                         </div>
                         <div className="input-field">
                             <i> <FaUser /> </i>
-                            <input type="text" name="userName" placeholder="Username" />
+                            <input type="text" onChange={(e) => onInputChange(e)} name="userName" placeholder="Username" />
                         </div>
                         <div className="input-field">
                             <i> <FaEnvelope /> </i>
-                            <input type="email" name="email" placeholder="Email" />
+                            <input type="email" onChange={(e) => onInputChange(e)} name="email" placeholder="Email" />
                         </div>
+                        {error && <p className='error'>Email Or Username Already In Use</p>}
                         <div className="input-field">
                             <i> <FaLock /> </i>
-                            <input type="password" name="password" placeholder="Password" />
+                            <input type="password" onChange={(e) => onInputChange(e)} name="password" placeholder="Password" />
                         </div>
                         <div className="button">
                             <div className="outer">
                                 <div className="btn transparent">
-                                    <button type="submit" value="Sign up"> Sign Up </button>
+                                    <button type="submit" onClick={(e)=>signupUser(e)} > Sign Up </button>
+                                    <p className='update_info'>{update}</p>
                                 </div>
                             </div>
                         </div>
