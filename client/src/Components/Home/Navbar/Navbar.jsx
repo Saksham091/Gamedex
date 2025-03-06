@@ -12,7 +12,7 @@ function Navbar() {
   const [searchButton, setSearchButton] = useState(true)
 
   const handleClick = () => {
-      setSearchButton(!searchButton)
+    setSearchButton(!searchButton)
   }
 
   let header = document.getElementsByClassName('header');
@@ -27,19 +27,27 @@ function Navbar() {
       <div className='container_nav'>
         <header className="header">
           <div className='logo'>
-            <Link to = "/"><p id='websiteName'> <img src={image} className="logo-img" /></p></Link>
+            <Link to="/"><p id='websiteName'> <img src={image} className="logo-img" /></p></Link>
           </div>
           <div className="group">
             <ul className="navigation">
-            <li><p>Bookmarks</p></li>
-              <Link to="/login"><li><p>Login</p></li></Link>
+              <Link to="/profile">
+                <li>
+                  <p>Profile</p>
+                </li>
+              </Link>
+              <Link to="/login">
+                <li>
+                  <p>Login</p>
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="search">
             <span className="icon">
               {searchButton ? <FaSearch onClick={handleClick} className='searchBtn' /> : <MdClose onClick={handleClick} className='closeBtn' />}
             </span>
-            <FiMenu className='menuToggle' onClick={handleMenuToggle}/>
+            <FiMenu className='menuToggle' onClick={handleMenuToggle} />
           </div>
           <div id='search' className={searchButton ? "searchBox" : "searchBox active"}>
             <input type="text" placeholder='Search here . . .' />

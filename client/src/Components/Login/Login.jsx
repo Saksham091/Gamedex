@@ -1,7 +1,7 @@
 import './login.css';
 import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Loading from '../Loading/loading';
 
 function Login() {
@@ -34,13 +34,13 @@ function Login() {
     }
 
     const onValueChange = (e) => {
-        setLogin({ ...login, [e.target.name]: e.target.value });       
+        setLogin({ ...login, [e.target.name]: e.target.value });
     }
 
     // Sign Up Function
 
- 
-    async function signupUser (e) {
+
+    async function signupUser(e) {
         e.preventDefault();
 
         try {
@@ -93,10 +93,10 @@ function Login() {
         }
     }
 
-    
+
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsLoading(false); 
+            setIsLoading(false);
         }, 2000);
 
         return () => clearTimeout(timer);
@@ -113,6 +113,9 @@ function Login() {
     return (
         <div className="container_login">
             <div className="forms-container">
+                <Link to="/">
+                    <p className="homepage">X</p>
+                </Link>
                 <div className="signin-signup">
                     <form className="sign-in-form">
                         <h2 className="title">Sign in</h2>
@@ -132,6 +135,7 @@ function Login() {
                                 </div>
                             </div>
                         </div>
+
                     </form>
                     <form className="sign-up-form">
                         <h2 className="title">Sign up</h2>
@@ -161,7 +165,7 @@ function Login() {
                         <div className="button">
                             <div className="outer">
                                 <div className="btn transparent">
-                                    <button type="submit" onClick={(e)=>signupUser(e)} > Sign Up </button>
+                                    <button type="submit" onClick={(e) => signupUser(e)} > Sign Up </button>
                                     <p className='update_info'>{update}</p>
                                 </div>
                             </div>
@@ -173,7 +177,7 @@ function Login() {
             <div className="panels-container">
                 <div className="panel left-panel">
                     <div className="content">
-                        <h3>New here ?</h3> 
+                        <h3>New here ?</h3>
                         <p>Click here to make your profile</p>
                         <div className="button">
                             <div className="outer">

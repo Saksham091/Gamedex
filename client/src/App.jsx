@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Home from './Components/Home/Home';
 import Info from './Components/Game Page/Info';
-import Login from './Components/Login/login';
+import Login from './Components/Login/Login';
 import Loading from './Components/Loading/loading';
 import Intro from './Components/Intro/Intro';
 import Profile from './Components/Profile/Profile';

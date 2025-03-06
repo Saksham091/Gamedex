@@ -52,6 +52,15 @@
   }
 }
 
+.homepage{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  font-size: 2rem;
+  z-index: 1;
+  color: white;
+}
+
 .signin-signup {
   position: absolute;
   top: 50%;
@@ -83,6 +92,7 @@ form.sign-up-form {
 
 form.sign-in-form {
   z-index: 2;
+  margin-bottom: 15%;
 }
 
 .title {
@@ -100,11 +110,11 @@ form.sign-in-form {
 
 .input-field {
   max-width: 380px;
-  width: 100%;  
+  width: 100%;
   background-color: #f0f0f0;
   margin: 10px 0;
-  height: 55px;
-  border-radius: 55px;
+  height: 35px;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
   padding: 0 2rem;
@@ -188,8 +198,8 @@ form.sign-in-form {
 .btn.transparent {
   margin: 0;
   background: none;
-  width: 130px;
-  height: 41px;
+  width: 90px;
+  height: 30px;
   font-weight: 600;
   font-size: 0.8rem;
   color: #fff;
@@ -206,23 +216,24 @@ form.sign-in-form {
 }
 
 .button{
-  border-radius: 49px; 
+  border-radius: 0.75rem; 
   justify-content: center;
   display: flex;
+  margin-top: 2%;
 }
 
 .outer{
   background: linear-gradient(#14ffe9, #ffeb3b , #ff00e0);
-  border-radius: 49px;
+  border-radius: 0.75rem;
 }
 
 .outer button{
   background: #111;
   color: #f2f2f2;
   cursor: pointer;
-  width: 129px;
-  height: 40px;
-  border-radius: 49px;
+  width: 88px;
+  height: 28px;
+  border-radius: 0.75rem;
 }
 
 
@@ -267,6 +278,29 @@ form.sign-in-form {
 
 
 /* Media Query */
+
+@media (max-width: 570px) {
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .outer {
+    width: 85px;
+  }
+
+  .outer button {
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .btn.transparent {
+    width: 85px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+}
+
 
 @media (max-width: 870px) {
   .container_login {
@@ -326,12 +360,6 @@ form.sign-in-form {
   .panel p {
     font-size: 0.7rem;
     padding: 0.5rem 0;
-  }
-
-  .btn.transparent {
-    width: 110px;
-    height: 35px;
-    font-size: 0.7rem;
   }
 
   .container_login:before {
