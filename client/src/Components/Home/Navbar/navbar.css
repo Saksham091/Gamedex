@@ -149,3 +149,8 @@ html{
     position: relative;
     display: none;
 }
+
+.custom-popup {
+    width: 20vw !important;
+    height: 6rem !important; /* Adjust height */
+}

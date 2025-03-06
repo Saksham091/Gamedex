@@ -7,6 +7,7 @@ import Login from './Components/Login/Login';
 import Loading from './Components/Loading/loading';
 import Intro from './Components/Intro/Intro';
 import Profile from './Components/Profile/Profile';
+import TokenRoute from './Components/TokenRoute/TokenRoute';
 
 function App() {
   const [showIntro, setShowIntro] = useState(false);
@@ -50,7 +51,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/intro" element={<Intro />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route element={<TokenRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
         </Routes>
       )}
     </div>
