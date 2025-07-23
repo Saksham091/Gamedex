@@ -10,6 +10,10 @@ const gameSchema = new schema({
         type: String
     },
 
+    genre: {
+        type: String
+    },
+
     releaseDate: {
         type: Date
     },
@@ -51,12 +55,6 @@ const gameSchema = new schema({
             Storage: {
                 type: String
             }
-        }
-    ],
-
-    missions: [
-        {
-            type: String
         }
     ],
 
