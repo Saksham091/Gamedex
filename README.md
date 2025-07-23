@@ -1,4 +1,5 @@
 # GameDex
+Note: This project is currently in progress — most of the frontend is completed, and work on the backend is underway.
 GameDex is a website that aims to provide large and well-organized collection of games and related resources. If you are a gamer searching for new titles to play, or want to know more about the existing game GameDex has got you covered. This website serves as a centralized hub of information about various games, including their genres, specifications, and more.
 
 ## 🚀 Live Demo
