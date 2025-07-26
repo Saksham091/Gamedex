@@ -21,15 +21,11 @@ function App() {
 
       if (!hasPlayedIntro) {
         setShowIntro(true);
-        setTimeout(() => {
-          sessionStorage.setItem('introPlayed', 'true');
-          setShowIntro(false);
-          setShowLoading(true);
-          setTimeout(() => {
-            setShowLoading(false);
-            navigate('/');
-          }, 2000);
-        }, 16000);
+        const introTimer = setTimeout(() => {
+          handleIntroSkip();
+        }, 16000); // fallback in case user doesn't press Enter
+
+        return () => clearTimeout(introTimer);
       } else {
         setShowLoading(true);
         setTimeout(() => {
@@ -40,9 +36,19 @@ function App() {
     }
   }, [navigate, location.pathname]);
 
+  const handleIntroSkip = () => {
+    sessionStorage.setItem('introPlayed', 'true');
+    setShowIntro(false);
+    setShowLoading(true);
+    setTimeout(() => {
+      setShowLoading(false);
+      navigate('/');
+    }, 2000);
+  };
+
   return (
     <div className="App">
-      {showIntro && <Intro />}
+      {showIntro && <Intro onSkip={handleIntroSkip} />}
       {showLoading && <Loading />}
       {!showIntro && !showLoading && (
         <Routes>
@@ -50,7 +56,7 @@ function App() {
           <Route path="/info" element={<Info />} />
           <Route path="/login" element={<Login />} />
           <Route path="/loading" element={<Loading />} />
-          <Route path="/intro" element={<Intro />} />
+          <Route path="/intro" element={<Intro onSkip={handleIntroSkip} />} />
           <Route element={<TokenRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
